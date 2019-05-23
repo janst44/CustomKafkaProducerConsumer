@@ -1,0 +1,12 @@
+{
+  "type": "record",
+  "name": "OhobS",
+  "namespace": "org.familysearch.search.kafka",
+  "doc": "Message used between Rockchuck and search/hinting systems to indicate persons changed, their one-hops, and siblings.",
+  "fields": [
+    { "name": "id", "type": "string", "doc": "ID (Arch) of main dude in Ohob.", "default": "\"\"" },
+    { "name": "action", "type": "string", "doc": "Action to perform with Ohob (upsert/delete persona).", "default": "\"\"" },
+    { "name": "ohobs", "type": "string", "doc": "Ohob containing the main person, their relationships to their one-hops and siblings, and those one-hops and siblings.", "default": "\"\"" },
+    { "name": "version", "type": "long", "doc": "Version / timestamp used to detect out of order processing.", "default": 0 }
+  ]
+}
