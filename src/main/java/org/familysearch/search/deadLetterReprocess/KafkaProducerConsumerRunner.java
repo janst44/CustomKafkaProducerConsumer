@@ -1,11 +1,7 @@
 package org.familysearch.search.deadLetterReprocess;
 
-import io.confluent.kafka.serializers.KafkaAvroDeserializerConfig;
-import org.familysearch.search.deadLetterReprocess.kafkaConsumers.SimpleKafkaConsumer;
-import org.apache.kafka.clients.producer.KafkaProducer;
-import org.apache.kafka.clients.producer.ProducerRecord;
+import org.familysearch.search.deadLetterReprocess.kafkaConsumers.KafkaProducerConsumer;
 //import org.apache.log4j.Logger;
-import org.familysearch.search.kafka.OhobS;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -13,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.util.Properties;
 
 @SpringBootApplication
-public class SimpleKafkaProducerApplication implements CommandLineRunner {
+public class KafkaProducerConsumerRunner implements CommandLineRunner {
 
     @Value("${kafka.topic.produce.to}")
     private String produceToTopic;
@@ -36,7 +32,7 @@ public class SimpleKafkaProducerApplication implements CommandLineRunner {
     //private static final Logger logger = Logger.getLogger(SimpleKafkaProducerApplication.class);
 
     public static void main( String[] args ) {
-        SpringApplication.run(SimpleKafkaProducerApplication.class, args);
+        SpringApplication.run(KafkaProducerConsumerRunner.class, args);
     }
 
     @Override
@@ -81,7 +77,7 @@ public class SimpleKafkaProducerApplication implements CommandLineRunner {
             //logger.info("Starting Kafka consumer thread.");
             System.out.println("starting kafka consumer thread");
 
-            SimpleKafkaConsumer simpleKafkaConsumer = new SimpleKafkaConsumer(
+            KafkaProducerConsumer simpleKafkaConsumer = new KafkaProducerConsumer(
                     produceToTopic,
                     consumeFromTopic,
                     producerProperties,

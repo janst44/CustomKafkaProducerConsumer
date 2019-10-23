@@ -2,9 +2,7 @@
 
 ## Kafka Topic
 
-```shell
-thetechcheck
-```
+
 
 ## Creating a Kafka Topic
 
@@ -29,3 +27,6 @@ java -jar target/<name_of_jar_file>.jar
 ```
 
 You should now be seeing the output in the terminal.
+
+Update:
+Just run the application after doing maven clean install and the the constructor calls the test producer which then gets consumed later. You have to have created the producer and consumer first. I named them ray.producer and ray.consumer in the properties file. Which i created through postman instead of doing the command above.
