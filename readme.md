@@ -2,7 +2,8 @@
 
 ## Kafka Topic
 
-
+# tutorial by thetechcheck:
+ https://github.com/contactsunny/SimpleKafkaExampleSpringBoot/tree/master/src/main/java/com/contactsunny/poc/SimpleKafkaProducer
 
 ## Creating a Kafka Topic
 
